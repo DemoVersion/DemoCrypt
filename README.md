@@ -8,12 +8,16 @@ DemoCrypt is a tiny crypting console program, which is also fast as much
 as possible, The algorithm used for crypting is symmetric-key algorithm
 based on bitwise XOR so the encrypting-key is also decrypting-key.
 
-DemoCrypt stores the MD5 of password in first 32 Bytes of ecrypted file,
-for checking the password before decrypting. 
+DemoCrypt stores the XOR of passwords MD5 and password in first 16 bytes
+of ecrypted file for checking the password before decrypting and also uses
+the next 16 bytes for header properties (currently empty).
 
-This software is published with known isuses for cracking password like
-cracking MD5, finding password using known part of main file. some of them
+This software is published with known isuses for cracking password by
+bruteforce, finding password using known part of main file. some of them 
 will be fixed in next versions.
+
+Using a KeyFile instead of password can bring an acceptable security for
+the encrypted file. 
 
 License
 ==============================
